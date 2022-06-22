@@ -1,0 +1,106 @@
+@import url("../../style.css");
+
+:root {
+  --black: #3a3a3a;
+  --white: #fff;
+  --green: #1abc25;
+}
+
+.catalog_inner {
+  margin-top: 60px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filters * {
+  display: inline-block;
+}
+
+.filters label {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+  border-radius: 2rem;
+  min-width: 50px;
+  line-height: normal;
+  cursor: pointer;
+  transition: all 0.1s;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;   
+  -khtml-user-select: none;    
+  -moz-user-select: none;      
+  -ms-user-select: none;       
+  user-select: none;
+}
+
+.filters label:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+
+/* FILTERED ELEMENTS (POSTS)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.posts .post {
+  width: 300px;
+  height: 450px;
+  margin-bottom: 20px;
+}
+
+.posts img {
+  width: 100%;
+}
+
+.posts .post-categories * {
+  display: inline-block;
+}
+
+.post-title {
+  font-family: 'Comfortaa', cursive;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.post-text {
+  padding: 0 5px;
+  opacity: 0.6;
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* FILTERING RULES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+[value="All"]:checked~.filters [for="All"],
+[value="SPUTANDGIBTV"]:checked~.filters [for="SPUTANDGIBTV"],
+[value="INTTV"]:checked~.filters [for="INTTV"],
+[value="SOPUTOBORYD"]:checked~.filters [for="SOPUTOBORYD"] {
+  background: var(--green);
+  color: var(--white);
+}
+
+[value="All"]:checked~.posts [data-category] {
+  display: block;
+}
+
+[value="SPUTANDGIBTV"]:checked~.posts .post:not([data-category~="SPUTANDGIBTV"]),
+[value="INTTV"]:checked~.posts .post:not([data-category~="INTTV"]),
+[value="SOPUTOBORYD"]:checked~.posts .post:not([data-category~="SOPUTOBORYD"]) {
+  display: none;
+}
