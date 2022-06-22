@@ -1,0 +1,99 @@
+@import url(/assests/htmlcssfiles/base/style.css);
+
+.about_us-inner {
+	margin-top: 80px;
+}
+
+.reviews-line {
+	width: 300px;
+	height: 3px;
+	background: #498a2d;
+	margin: 23px auto 0;
+}
+
+
+
+.about_us-title>h2 {
+	text-align: center;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+
+.about_us-text {
+	margin-top: 80px;
+	margin-bottom: 250px;
+}
+
+.about_us-text p {
+	margin-bottom: 30px;
+	line-height: 1.6;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.about_us-text p::first-letter {
+	margin-left: 30px;
+}
+
+/* list style */
+.about-us-advantages {
+	margin-bottom: 60px;
+}
+
+.rectangle {
+	margin-top: 120px;
+	counter-reset: li;
+	list-style: none;
+	font: 14px "Trebuchet MS", "Lucida Sans";
+	padding: 0;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.rectangle p {
+	position: relative;
+	display: inline-block;
+	padding: .4em .4em .4em .8em;
+	margin: .5em 0 .5em 2.5em;
+	background: #D3D4DA;
+	color: #444;
+	text-decoration: none;
+	transition: all .3s ease-out;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	cursor: default;
+}
+
+.rectangle p:hover {
+	background: #DCDDE1;
+}
+
+.rectangle p::before {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	left: -2.5em;
+	top: 50%;
+	margin-top: -1em;
+	background: #9097A2;
+	height: 2em;
+	width: 2em;
+	line-height: 2em;
+	text-align: center;
+	font-weight: bold;
+}
+
+.rectangle p::after {
+	position: absolute;
+	content: "";
+	border: .5em solid transparent;
+	left: -1em;
+	top: 50%;
+	margin-top: -.5em;
+	transition: all .3s ease-out;
+}
+
+.rectangle p:hover::after {
+	left: -.5em;
+	border-left-color: #9097A2;
+}
