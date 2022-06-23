@@ -1,8 +1,8 @@
 //функция скролла вверх при обновлении страницы
-$(function() {
-$('html, body').animate({
-  scrollTop: 0
-}, 1);
+history.scrollRestoration = "manual";
+
+$(window).on('beforeunload', function(){
+      $(window).scrollTop(0);
 });
   
 // анимация соц сетей
